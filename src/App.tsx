@@ -9,6 +9,7 @@ import { PRODUCTS_DATA } from "@/lib/mockData";
 import { useStore } from "@/store/store";
 import ChangeQtyButtons from "./components/changeQtyButtons";
 import { Cart } from "./components/Chart";
+import { User } from "./components/User";
 
 export default function App() {
   const addProduct = useStore((state) => state.addProduct);
@@ -16,7 +17,11 @@ export default function App() {
 
   return (
     <main className="space-y-2 dark h-screen bg-background max-w-sm mx-auto mt-2">
-      <Cart />
+      <div className="flex justify-between">
+        <User />
+        <Cart />
+      </div>
+
       <div className="flex justify-between"></div>
       <h1 className="text-2xl">Products:</h1>
       <div className="space-y-2">
